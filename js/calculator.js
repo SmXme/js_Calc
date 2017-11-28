@@ -1,14 +1,12 @@
 // add your code here to make the calculator work
 
 //						GLOBAL VARIABlES						//
-var resultat;
+var result;
 
 						//		EventListeners		//
 
 //Event when a button is clicked
 $('.btn').click(addNumber);
-
-
 
 						//		Functions		//
 //Function to add the number, with some tests to neutralize operators.
@@ -21,7 +19,7 @@ function addNumber () {
 			cleanOperation();
 		}
 	else if (getNumber == "="){
-		afficherResultat();
+		printResult();
 	}
 }
 
@@ -31,8 +29,8 @@ function cleanOperation(){
 }
 
 //Function to print the result on the calc
-function afficherResultat(){
-	$('#result').html(resultat);	
+function printResult(){
+	$('#result').html(result);	
 }
 
 function treatOperation(){
