@@ -10,7 +10,7 @@ $('.btn').click(addNumber);
 $('body').keypress(nbByKeyPress);
 
 						//		Functions		//
-
+//Print numbers, operators or execute some functions on pressure
 function nbByKeyPress(){
 		console.log(event.keyCode);
 	switch (event.keyCode) {	
@@ -61,8 +61,10 @@ function nbByKeyPress(){
 		case 57:
 			$('#result').append(9);
 			break;
+		case 99:
+			cleanOperation();
+			break;
 		default:
-			// statements_def
 			break;
 	}
 }
@@ -84,7 +86,7 @@ function addNumber () {
 //Function to clean the result div when c is clicked
 function cleanOperation(){
 	$('#result').html('');
-	result=0;
+	result="";
 }
 
 //Function to print the result on the calc
