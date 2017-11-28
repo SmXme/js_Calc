@@ -13,12 +13,13 @@ $('.btn').click(addNumber);
 function addNumber () {
 	getNumber = $(this).html();
 	if (getNumber != "c" & getNumber != "="){
-		$('#result').append(getNumber);		
+		$('#result').append(getNumber);	
 	}
 	else if (getNumber == "c"){
 			cleanOperation();
 		}
 	else if (getNumber == "="){
+		treatOperation();
 		printResult();
 	}
 }
@@ -26,6 +27,7 @@ function addNumber () {
 //Function to clean the result div when c is clicked
 function cleanOperation(){
 	$('#result').html('');
+	result=0;
 }
 
 //Function to print the result on the calc
@@ -35,22 +37,52 @@ function printResult(){
 
 function treatOperation(){
 	getOperation = $('#result').html();
-	lastChar = getOperation.substr(0,1);
-	console.log(lastChar);
-	if (lastChar == '+' & lastChar == '-' | lastChar == '*' | lastChar == '/' ){
-		switch (lastChar) {
-			case "+":
-			console.log(getOperation.indexOf("+"));
-				break;
-			case "-":
-				break;
-			case "/":
-				break;
-			case "*":
-				break;
+	isAddition = getOperation.indexOf('+');
+	isSubstraction = getOperation.indexOf('-');
+	isDivision = getOperation.indexOf('/');
+	isMultiplication = getOperation.indexOf('*');
 
-			default:
-				break;
+		if(isAddition != -1){
+
+			nextChar = getOperation.substr(isAddition+1,1);
+			if(nextChar != "" && nextChar != "+" && nextChar != "-" && nextChar != "*" && nextChar != "/"){
+				nb1 = getOperation.substr(0,isAddition); 
+				nb2 = getOperation.substr(isAddition+1,getOperation.length);
+				intNb1 = parseInt(nb1); 
+				intNb2 = parseInt(nb2);
+				result = intNb1 + intNb2;
+			}
+		}
+
+		if(isSubstraction != -1){
+			nextChar = getOperation.substr(isSubstraction+1,1);
+			if(nextChar != "" && nextChar != "+" && nextChar != "-" && nextChar != "*" && nextChar != "/"){
+				nb1 = getOperation.substr(0,isSubstraction); 
+				nb2 = getOperation.substr(isSubstraction+1,getOperation.length);
+				intNb1 = parseInt(nb1); 
+				intNb2 = parseInt(nb2);
+				result = intNb1 - intNb2;
+			}
+
+		}
+		if(isMultiplication != -1){
+			nextChar = getOperation.substr(isMultiplication+1,1);
+			if(nextChar != "" && nextChar != "+" && nextChar != "-" && nextChar != "*" && nextChar != "/"){
+				nb1 = getOperation.substr(0,isMultiplication); 
+				nb2 = getOperation.substr(isMultiplication+1,getOperation.length);
+				intNb1 = parseInt(nb1); 
+				intNb2 = parseInt(nb2);
+				result = intNb1 * intNb2;
+			}
+		}
+		if(isDivision != -1){
+			nextChar = getOperation.substr(isDivision+1,1);
+			if(nextChar != "" && nextChar != "+" && nextChar != "-" && nextChar != "*" && nextChar != "/"){
+				nb1 = getOperation.substr(0,isDivision); 
+				nb2 = getOperation.substr(isDivision+1,getOperation.length);
+				intNb1 = parseInt(nb1); 
+				intNb2 = parseInt(nb2);
+				result = intNb1 / intNb2;
+			}
 		}
 	}
-}
