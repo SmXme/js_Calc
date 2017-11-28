@@ -1,7 +1,7 @@
 // add your code here to make the calculator work
 
 //						GLOBAL VARIABlES						//
-var result;
+var resultat;
 
 						//		EventListeners		//
 
@@ -14,18 +14,14 @@ $('.btn').click(addNumber);
 //Function to add the number, with some tests to neutralize operators.
 function addNumber () {
 	getNumber = $(this).html();
-
-	if (getNumber != "c" & getNumber != "=" & getNumber != "-" & getNumber != "+" & getNumber != "*" & getNumber != "/"){
+	if (getNumber != "c" & getNumber != "="){
 		$('#result').append(getNumber);		
 	}
 	else if (getNumber == "c"){
-		cleanOperation();
-	}
-	else if (getNumber == "-" | getNumber == "+" | getNumber == "*" | getNumber == "/"){
-		t	
-	}
+			cleanOperation();
+		}
 	else if (getNumber == "="){
-		printResult();
+		afficherResultat();
 	}
 }
 
@@ -35,6 +31,6 @@ function cleanOperation(){
 }
 
 //Function to print the result on the calc
-function printResult(){
-	$('#result').html(result);	
+function afficherResultat(){
+	$('#result').html(resultat);	
 }
