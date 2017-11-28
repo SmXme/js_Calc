@@ -1,9 +1,13 @@
 // add your code here to make the calculator work
 
-//		EventListeners		//
+						//		EventListeners		//
+
+//Event when a button is clicked
 $('.btn').click(addNumber);
 
-//		Functions		//
+
+
+						//		Functions		//
 function addNumber () {
 	$('#result').append($(this).html());
 }
