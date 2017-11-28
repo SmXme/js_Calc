@@ -42,16 +42,14 @@ function treatOperation(){
 	isSubstraction = getOperation.indexOf('-');
 	isDivision = getOperation.indexOf('/');
 	isMultiplication = getOperation.indexOf('*');
-
+	
 		if(isAddition != -1){
 
 			nextChar = getOperation.substr(isAddition+1,1);
 			if(nextChar != "" && nextChar != "+" && nextChar != "-" && nextChar != "*" && nextChar != "/"){
 				nb1 = getOperation.substr(0,isAddition); 
 				nb2 = getOperation.substr(isAddition+1,getOperation.length);
-				intNb1 = parseInt(nb1); 
-				intNb2 = parseInt(nb2);
-				result = intNb1 + intNb2;
+				result = parseInt(nb1) + parseInt(nb2);
 			}
 		}
 
@@ -60,9 +58,7 @@ function treatOperation(){
 			if(nextChar != "" && nextChar != "+" && nextChar != "-" && nextChar != "*" && nextChar != "/"){
 				nb1 = getOperation.substr(0,isSubstraction); 
 				nb2 = getOperation.substr(isSubstraction+1,getOperation.length);
-				intNb1 = parseInt(nb1); 
-				intNb2 = parseInt(nb2);
-				result = intNb1 - intNb2;
+				result = parseInt(nb1) - parseInt(nb2);
 			}
 
 		}
@@ -71,9 +67,7 @@ function treatOperation(){
 			if(nextChar != "" && nextChar != "+" && nextChar != "-" && nextChar != "*" && nextChar != "/"){
 				nb1 = getOperation.substr(0,isMultiplication); 
 				nb2 = getOperation.substr(isMultiplication+1,getOperation.length);
-				intNb1 = parseInt(nb1); 
-				intNb2 = parseInt(nb2);
-				result = intNb1 * intNb2;
+				result = parseInt(nb1) * parseInt(nb2);
 			}
 		}
 		if(isDivision != -1){
@@ -81,9 +75,7 @@ function treatOperation(){
 			if(nextChar != "" && nextChar != "+" && nextChar != "-" && nextChar != "*" && nextChar != "/"){
 				nb1 = getOperation.substr(0,isDivision); 
 				nb2 = getOperation.substr(isDivision+1,getOperation.length);
-				intNb1 = parseInt(nb1); 
-				intNb2 = parseInt(nb2);
-				result = intNb1 / intNb2;
+				result = parseInt(nb1) / parseInt(nb2);
 			}
 		}
 	}
