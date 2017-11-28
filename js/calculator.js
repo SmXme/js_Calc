@@ -34,3 +34,25 @@ function cleanOperation(){
 function afficherResultat(){
 	$('#result').html(resultat);	
 }
+
+function treatOperation(){
+	getOperation = $('#result').html();
+	lastChar = getOperation.substr(0,1);
+	console.log(lastChar);
+	if (lastChar == '+' & lastChar == '-' | lastChar == '*' | lastChar == '/' ){
+		switch (lastChar) {
+			case "+":
+			console.log(getOperation.indexOf("+"));
+				break;
+			case "-":
+				break;
+			case "/":
+				break;
+			case "*":
+				break;
+
+			default:
+				break;
+		}
+	}
+}
