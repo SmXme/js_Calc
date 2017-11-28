@@ -35,6 +35,7 @@ function printResult(){
 	$('#result').html(result);	
 }
 
+//Function to check the operation type, and do the treatments on 2 numbers;
 function treatOperation(){
 	getOperation = $('#result').html();
 	isAddition = getOperation.indexOf('+');
