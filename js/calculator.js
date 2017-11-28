@@ -7,8 +7,65 @@ var result;
 
 //Event when a button is clicked
 $('.btn').click(addNumber);
+$('body').keypress(nbByKeyPress);
 
 						//		Functions		//
+
+function nbByKeyPress(){
+		console.log(event.keyCode);
+	switch (event.keyCode) {	
+
+		case 13:
+			treatOperation();
+			printResult();
+			break;
+		case 42:
+			$('#result').append('*');
+			break;
+		case 43:
+			$('#result').append('+');
+			break;
+		case 45:
+			$('#result').append('-');
+			break;
+		case 47:
+			$('#result').append('/');
+			break;
+		case 48:
+			$('#result').append(0);
+			break;
+		case 49:
+			$('#result').append(1);
+			break;
+		case 50:
+			$('#result').append(2);
+			break;
+		case 51:
+			$('#result').append(3);
+			break;
+		case 52:
+			$('#result').append(4);
+			break;
+		case 53:
+			$('#result').append(5);
+			break;
+		case 54:
+			$('#result').append(6);
+			break;
+		case 55:
+			$('#result').append(7);
+			break;
+		case 56:
+			$('#result').append(8);
+			break;
+		case 57:
+			$('#result').append(9);
+			break;
+		default:
+			// statements_def
+			break;
+	}
+}
 //Function to add the number, with some tests to neutralize operators.
 function addNumber () {
 	getNumber = $(this).html();
