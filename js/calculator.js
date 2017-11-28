@@ -12,7 +12,6 @@ $('body').keypress(nbByKeyPress);
 						//		Functions		//
 //Print numbers, operators or execute some functions on pressure
 function nbByKeyPress(){
-		console.log(event.keyCode);
 	switch (event.keyCode) {	
 
 		case 13:
